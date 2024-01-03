@@ -1,2 +1,16 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script>
+    import { onMount } from 'svelte';
+
+    function checkLoggedIn() {
+        return false
+    }
+    onMount(() => {
+        const isLoggedIn = checkLoggedIn();
+
+        if (isLoggedIn) {
+            window.location.href = '/dashboard';
+        } else {
+            window.location.href = '/login';
+        }
+    });
+</script>
